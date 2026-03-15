@@ -1,8 +1,5 @@
 let instance
 
-/**
- * 统一的音效管理器
- */
 export default class Music {
   constructor() {
     if ( instance )
@@ -24,16 +21,27 @@ export default class Music {
   }
 
   playBgm() {
-    this.bgmAudio.play()
+    const p = this.bgmAudio.play()
+    if (p && p.catch) {
+      p.catch(() => {
+        const resume = () => {
+          this.bgmAudio.play()
+          document.removeEventListener('touchstart', resume)
+          document.removeEventListener('mousedown', resume)
+        }
+        document.addEventListener('touchstart', resume)
+        document.addEventListener('mousedown', resume)
+      })
+    }
   }
 
   playShoot() {
     this.shootAudio.currentTime = 0
-    this.shootAudio.play()
+    this.shootAudio.play().catch(() => {})
   }
 
   playExplosion() {
     this.boomAudio.currentTime = 0
-    this.boomAudio.play()
+    this.boomAudio.play().catch(() => {})
   }
 }

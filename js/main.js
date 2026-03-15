@@ -1,9 +1,9 @@
-import Player from './player/index'
-import Enemy from './npc/enemy'
-import BackGround from './runtime/background'
-import GameInfo from './runtime/gameinfo'
-import Music from './runtime/music'
-import DataBus from './databus'
+import Player from './player/index.js'
+import Enemy from './npc/enemy.js'
+import BackGround from './runtime/background.js'
+import GameInfo from './runtime/gameinfo.js'
+import Music from './runtime/music.js'
+import DataBus from './databus.js'
 
 let ctx = canvas.getContext('2d')
 let databus = new DataBus()

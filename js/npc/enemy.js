@@ -1,5 +1,5 @@
-import Animation from '../base/animation'
-import DataBus   from '../databus'
+import Animation from '../base/animation.js'
+import DataBus   from '../databus.js'
 
 const ENEMY_IMG_SRC = 'images/enemy.png'
 const ENEMY_WIDTH   = 60

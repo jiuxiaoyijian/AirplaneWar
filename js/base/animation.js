@@ -1,5 +1,5 @@
-import Sprite  from './sprite'
-import DataBus from '../databus'
+import Sprite  from './sprite.js'
+import DataBus from '../databus.js'
 
 let databus = new DataBus()
 
